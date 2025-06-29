@@ -1,0 +1,504 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+#game {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+#menu,
+#setting,
+#shortcuts,
+#help,
+#board,
+#player,
+#console,
+#opponents {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background-color: #eee;
+}
+
+#console {
+  max-height: 115px;
+  overflow-y: scroll;
+}
+
+#shortcuts {
+  padding: 0px;
+  background-color: white;
+}
+#shortcuts .shortcuts-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  justify-content: right;
+}
+
+#help {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+#help #help-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: left;
+  justify-content: start;
+  max-width: 400px;
+}
+#help #help-content p {
+  margin-top: 14px;
+}
+#help #help-content small {
+  color: #777;
+}
+#help #help-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#help #help-content ul li {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
+
+#menu,
+#setting {
+  flex: 1;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+#menu .menu-buttons,
+#setting .menu-buttons {
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#menu .setting-buttons,
+#setting .setting-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 6px;
+}
+#menu .setting-buttons > button,
+#setting .setting-buttons > button {
+  width: 50px;
+}
+
+#board {
+  flex: 1;
+}
+
+#table {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+#table > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+#postures,
+#characters {
+  justify-content: center;
+}
+
+#character-deck,
+#gift-deck {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.card-group .card {
+  margin-left: -144px;
+}
+.card-group .card:first-child {
+  margin-left: 0;
+}
+
+.token-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.token-group .token {
+  margin-top: -9px;
+}
+.token-group .token:first-child {
+  margin-top: 0;
+}
+
+.card {
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 6px;
+  width: 160px;
+  height: 205px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: visible;
+  box-shadow: -6px 0px 0px #96969677;
+}
+.card-up {
+  backgorund-color: white;
+}
+.card-down {
+  background-color: #eee;
+}
+.card-slots-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.card-slots {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  justify-content: center;
+  padding: 3px 0px;
+  border-radius: 3px;
+}
+.card-slots .slot {
+  background-color: #eeeeee;
+}
+.card-side {
+  width: 50px;
+  box-shadow: none;
+  border: none;
+  background-color: #ddd;
+}
+.card-posture {
+  box-shadow: none;
+}
+.card-red {
+  box-shadow: -6px 0px 0px #ff000077;
+}
+.card-yellow {
+  box-shadow: -6px 0px 0px #ffaf0077;
+}
+.card-green {
+  box-shadow: -6px 0px 0px #12cc1877;
+}
+.card-purple {
+  box-shadow: -6px 0px 0px #6e16b677;
+}
+.card-chapters, .card-tokens {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  justify-content: end;
+}
+.card-type, .card-need {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 13px;
+  padding-top: 1px;
+}
+.card-header {
+  padding: 3px 6px;
+  color: black;
+}
+.card-content {
+  padding: 0px 6px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 6px;
+}
+.card-footer {
+  padding: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 3px;
+}
+.card-cost-effects {
+  position: relative;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+.card-costs {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  font-size: 14px;
+  position: relative;
+  top: 0px;
+  border-radius: 3px 3px 0px 0px;
+  padding: 0px 3px;
+  background-color: #eee;
+  justify-content: right;
+}
+.card-center {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+  text-align: center;
+  transform: translate(0%, -50%);
+}
+.card-ghost {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.possible-effects {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.effects {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 3px 6px;
+  font-size: 16px;
+}
+.effects:not(:first-child) {
+  border-top: 1px solid #ddd;
+}
+
+.set-effects {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+
+.token,
+.token-mini,
+.slot,
+.chapter {
+  background-color: white;
+  border-radius: 50px;
+  border: 0px;
+  padding: 6px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border: 1px solid black;
+}
+.token-shield,
+.token-mini-shield,
+.slot-shield,
+.chapter-shield {
+  width: 110px;
+  border-radius: 3px;
+}
+
+.token {
+  box-shadow: -2px 2px 0px #96969677;
+}
+
+.slot {
+  border: 1px solid #ddd;
+}
+
+.token-mini {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  font-size: 13px;
+  padding: 0px;
+}
+.token-mini-shield {
+  width: 42px;
+  border-radius: 3px;
+}
+
+.chapter {
+  padding: 0px;
+  background-color: #eee;
+  width: 14px;
+  height: 14px;
+  font-size: 10px;
+}
+
+.grey {
+  color: #555;
+}
+
+.section {
+  text-align: center;
+  font-size: 12px;
+}
+
+.no {
+  position: relative;
+}
+.no > span {
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  font-size: 10px;
+}
+
+.card-helper,
+.token,
+.token-mini,
+.token-cost,
+.token-effect,
+.card-cost,
+.card-effect,
+.power-effect,
+.player-effect,
+.table-data-item {
+  position: relative;
+}
+.card-helper .helper,
+.token .helper,
+.token-mini .helper,
+.token-cost .helper,
+.token-effect .helper,
+.card-cost .helper,
+.card-effect .helper,
+.power-effect .helper,
+.player-effect .helper,
+.table-data-item .helper {
+  font-size: 14px;
+  display: none;
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 160px;
+  background-color: #eee;
+  border: 1px dashed black;
+  border-radius: 3px;
+  padding: 3px 6px;
+  z-index: 1000;
+  text-align: left;
+  pointer-events: none;
+}
+.card-helper:hover,
+.token:hover,
+.token-mini:hover,
+.token-cost:hover,
+.token-effect:hover,
+.card-cost:hover,
+.card-effect:hover,
+.power-effect:hover,
+.player-effect:hover,
+.table-data-item:hover {
+  pointer: cursor;
+}
+.card-helper:hover .helper,
+.token:hover .helper,
+.token-mini:hover .helper,
+.token-cost:hover .helper,
+.token-effect:hover .helper,
+.card-cost:hover .helper,
+.card-effect:hover .helper,
+.power-effect:hover .helper,
+.player-effect:hover .helper,
+.table-data-item:hover .helper {
+  display: block;
+}
+
+.table-data-item {
+  text-align: center;
+}
+.table-data-item .helper {
+  bottom: auto;
+  top: 24px;
+}
+
+.opponent {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.table-data {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+.table-data > div {
+  border-radius: 3px;
+  /* border: 1px solid black; */
+  padding: 0px 6px;
+  background-color: #fff;
+}
+
+.score {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 8px;
+  text-align: right;
+}
+
+/*# sourceMappingURL=main.css.map */
