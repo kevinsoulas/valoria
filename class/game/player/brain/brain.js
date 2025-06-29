@@ -239,7 +239,7 @@ class Brain {
             player.countTokenAll("life") === 1 &&
             player.countTokenAll("immune") === 0
           ) {
-            console.log(
+            this.game.log(
               `${this.player.familyCard.name} poisons and kills ${player.familyCard.name}`
             );
             this.player.poison(player.familyCard.id);
@@ -260,7 +260,7 @@ class Brain {
             }
           }
           if (targetPlayer) {
-            console.log(
+            this.game.log(
               `${this.player.familyCard.name} poisons ${targetPlayer.familyCard.name} who has only ${minLife} life`
             );
             this.player.poison(targetPlayer.familyCard.id);
@@ -278,7 +278,7 @@ class Brain {
             player.countTokenAll("life") === 1 &&
             player.countTokenAll("shield") === 0
           ) {
-            console.log(
+            this.game.log(
               `${this.player.familyCard.name} attacks and kills ${player.familyCard.name}`
             );
             this.player.attack(player.familyCard.id);
@@ -299,7 +299,7 @@ class Brain {
             }
           }
           if (targetPlayer) {
-            console.log(
+            this.game.log(
               `${this.player.familyCard.name} attacks ${targetPlayer.familyCard.name} who has only ${minLife} life`
             );
             this.player.attack(targetPlayer.familyCard.id);
