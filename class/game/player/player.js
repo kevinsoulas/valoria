@@ -232,7 +232,7 @@ class Player {
     const targetPlayer = this.game.players.find(
       (player) => player.familyCard?.id === familyId
     );
-    return targetPlayer.countCard() > 0;
+    return targetPlayer.countCards() > 0;
   }
 
   /**
@@ -672,10 +672,10 @@ class Player {
    * @param {string} type - The type of card to count
    * @returns {number} The number of cards of the specified type
    */
-  countCard(type) {
+  countCards(type) {
     switch (type) {
       case "gift":
-        return this.gifts.countCard();
+        return this.gifts.countCards();
     }
     return 0;
   }
@@ -757,10 +757,12 @@ class Player {
           })
           .join(" ")}
       ${
-        this.countCard("gift")
-          ? `<div class="table-data-item">${this.countCard("gift")} ${new Token(
+        this.countCards("gift")
+          ? `<div class="table-data-item">${this.countCards(
               "gift"
-            ).renderTokenEmoji()}${new Helper("gift").render()}</div>`
+            )} ${new Token("gift").renderTokenEmoji()}${new Helper(
+              "gift"
+            ).render()}</div>`
           : ""
       }
       </div>

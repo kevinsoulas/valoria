@@ -2,24 +2,8 @@ const postureCards = [
   {
     extension: 0,
     type: "posture",
-    id: "one-favor",
-    name: "One Favor",
-    description: "Perform a service to earn the king's personal gratitude",
-    possibleChapters: [1],
-    possibleEffects: [
-      [
-        {
-          token: "favor",
-          add: 1,
-        },
-      ],
-    ],
-  },
-  {
-    extension: 0,
-    type: "posture",
-    id: "royal-quest",
-    name: "Royal Quest",
+    id: "quest",
+    name: "Quest",
     description: "Undertake a prestigious mission in service of the crown",
     possibleChapters: [1],
     possibleEffects: [
@@ -60,7 +44,8 @@ const postureCards = [
           player: "attacked",
         },
         {
-          power: "gift-choice",
+          token: "life",
+          add: 1,
         },
       ],
     ],
@@ -76,77 +61,6 @@ const postureCards = [
       [
         {
           power: "vision",
-        },
-      ],
-    ],
-  },
-  {
-    extension: 1,
-    type: "posture",
-    id: "accident",
-    name: "Accident",
-    description:
-      "Stage an unfortunate accident... but be prepared to face the consequences",
-    possibleChapters: [1],
-    possibleEffects: [
-      [
-        {
-          token: "crime",
-          add: 1,
-        },
-      ],
-    ],
-  },
-
-  {
-    extension: 2,
-    type: "posture",
-    id: "acquaintance",
-    name: "Acquaintance",
-    description: "Make new powerful connections in the royal court today",
-    possibleChapters: [1],
-    possibleEffects: [
-      [
-        {
-          power: "meet",
-        },
-      ],
-    ],
-  },
-  {
-    extension: 0,
-    type: "posture",
-    id: "mercy",
-    name: "Mercy",
-    description: "Show compassion to your rivals to gain moral standing",
-    possibleChapters: [2],
-    possibleEffects: [
-      [
-        {
-          token: "life",
-          add: 1,
-        },
-        {
-          player: "shamed",
-        },
-      ],
-    ],
-  },
-  {
-    extension: 0,
-    type: "posture",
-    id: "sacrifice",
-    name: "Sacrifice",
-    description: "Trade material wealth for a chance at greater influence",
-    possibleChapters: [2],
-    possibleEffects: [
-      [
-        {
-          token: "gold",
-          add: 1,
-        },
-        {
-          player: "attacked",
         },
       ],
     ],
@@ -193,25 +107,6 @@ const postureCards = [
   {
     extension: 0,
     type: "posture",
-    id: "introduction",
-    name: "Introduction",
-    description: "A fortuitous encounter through a generous intermediary",
-    possibleChapters: [2],
-    possibleEffects: [
-      [
-        {
-          token: "gold",
-          add: 1,
-        },
-        {
-          power: "meet",
-        },
-      ],
-    ],
-  },
-  {
-    extension: 1,
-    type: "posture",
     id: "advocate",
     name: "Advocate",
     description: "Gather intelligence while undermining others' reputations",
@@ -228,7 +123,7 @@ const postureCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 1,
     type: "posture",
     id: "intimidation",
     name: "Intimidation",
@@ -246,26 +141,10 @@ const postureCards = [
   {
     extension: 0,
     type: "posture",
-    id: "treasure",
-    name: "Treasure",
-    description: "Convert your accumulated wealth into vital resources",
-    possibleChapters: [3],
-    possibleEffects: [
-      [
-        {
-          token: "gold",
-          per: "life",
-        },
-      ],
-    ],
-  },
-  {
-    extension: 0,
-    type: "posture",
     id: "heresy",
     name: "Heresy",
     description: "Amass riches through forbidden and dangerous means",
-    possibleChapters: [3],
+    possibleChapters: [2, 3],
     possibleEffects: [
       [
         {
@@ -273,7 +152,13 @@ const postureCards = [
           add: 2,
         },
         {
-          player: "shamed",
+          player: "attacked",
+        },
+      ],
+      [
+        {
+          token: "shield",
+          set: 0,
         },
       ],
     ],
@@ -300,22 +185,6 @@ const postureCards = [
   {
     extension: 0,
     type: "posture",
-    id: "investment",
-    name: "Investment",
-    description: "Make a shrewd financial move to multiply your wealth",
-    possibleChapters: [3],
-    possibleEffects: [
-      [
-        {
-          token: "gold",
-          mult: 2,
-        },
-      ],
-    ],
-  },
-  {
-    extension: 0,
-    type: "posture",
     id: "feudal-taxes",
     name: "Feudal Taxes",
     description: "Use your wealth to curry favor with the crown",
@@ -330,7 +199,7 @@ const postureCards = [
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "posture",
     id: "guild",
     name: "Guild",
@@ -346,7 +215,7 @@ const postureCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 1,
     type: "posture",
     id: "blackmail",
     name: "Blackmail",
@@ -481,7 +350,7 @@ const postureCards = [
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "posture",
     id: "loyalty",
     name: "Loyalty",
@@ -496,7 +365,8 @@ const postureCards = [
       ],
       [
         {
-          player: "attacked",
+          token: "favor",
+          set: 0,
         },
       ],
       [
@@ -526,8 +396,8 @@ const postureCards = [
       ],
       [
         {
-          token: "prestige",
-          set: 0,
+          player: "attacked",
+          per: "crime",
         },
       ],
       [
@@ -536,7 +406,8 @@ const postureCards = [
           set: 0,
         },
         {
-          player: "attacked",
+          token: "prestige",
+          set: 0,
         },
       ],
     ],
@@ -572,7 +443,7 @@ const postureCards = [
     possibleEffects: [
       [
         {
-          token: "prestige",
+          token: "favor",
           add: 1,
         },
       ],
@@ -594,7 +465,7 @@ const postureCards = [
       [
         {
           token: "gold",
-          add: 1,
+          add: 2,
         },
       ],
       [
@@ -605,7 +476,7 @@ const postureCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 1,
     type: "posture",
     id: "espionage",
     name: "Espionage",
@@ -692,7 +563,7 @@ const postureCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 1,
     type: "posture",
     id: "court",
     name: "Court",
@@ -720,7 +591,7 @@ const postureCards = [
     id: "bribery",
     name: "Bribery",
     description: "Use wealth to influence others, but risk exposure",
-    possibleChapters: [1, 3],
+    possibleChapters: [2, 3],
     possibleEffects: [
       [
         {
@@ -742,7 +613,7 @@ const postureCards = [
     id: "spiritual",
     name: "Spiritual",
     description: "Seek spiritual enlightenment with consequences",
-    possibleChapters: [1, 3],
+    possibleChapters: [2, 3],
     possibleEffects: [
       [
         {
@@ -764,7 +635,7 @@ const postureCards = [
     id: "duel",
     name: "Duel",
     description: "Challenge a rival to a duel of honor with high stakes",
-    possibleChapters: [1, 3],
+    possibleChapters: [2, 3],
     possibleEffects: [
       [
         {
@@ -784,28 +655,6 @@ const postureCards = [
         {
           token: "prestige",
           set: 0,
-        },
-      ],
-    ],
-  },
-  {
-    extension: 2,
-    type: "posture",
-    id: "revenge",
-    name: "Revenge",
-    description: "Use criminals to take bloody revenge on enemies",
-    possibleChapters: [2, 3],
-    possibleEffects: [
-      [
-        {
-          token: "prestige",
-          add: 1,
-        },
-      ],
-      [
-        {
-          player: "attacked",
-          per: "crime",
         },
       ],
     ],

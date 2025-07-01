@@ -39,7 +39,7 @@ const familyCards = [
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "family",
     color: "red",
     id: "ombrevoie",
@@ -59,7 +59,7 @@ const familyCards = [
       },
       {
         type: "life",
-        max: 2,
+        max: 3,
       },
     ],
     effects: [
@@ -152,7 +152,7 @@ const familyCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 0,
     type: "family",
     color: "red",
     id: "gavanor",
@@ -225,7 +225,7 @@ const familyCards = [
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "family",
     color: "red",
     id: "corbrune",
@@ -260,45 +260,17 @@ const familyCards = [
     ],
   },
   {
-    extension: 2,
-    type: "family",
-    color: "red",
-    id: "adamantin",
-    name: "Adamantin",
-    description:
-      "Ancient family whose blood grants them supernatural resilience",
-    heirPriority: 8,
-    tokens: [
-      {
-        type: "immune",
-        value: 1,
-      },
-    ],
-    slots: [
-      {
-        type: "shield",
-        max: 1,
-      },
-    ],
-    effects: [
-      {
-        token: "gold",
-        set: 2,
-      },
-    ],
-  },
-  {
-    extension: 2,
+    extension: 1,
     type: "family",
     color: "red",
     id: "black",
     name: "Black",
     description: "A notorious family surviving through cunning and crime",
-    heirPriority: 9,
+    heirPriority: 8,
     tokens: [
       {
         type: "crime",
-        value: 2,
+        value: 1,
       },
       {
         type: "life",
@@ -319,6 +291,38 @@ const familyCards = [
       {
         card: "gift",
         set: 1,
+      },
+      {
+        token: "crime",
+        set: 1,
+      },
+    ],
+  },
+  {
+    extension: 2,
+    type: "family",
+    color: "red",
+    id: "adamantin",
+    name: "Adamantin",
+    description:
+      "Ancient family whose blood grants them supernatural resilience",
+    heirPriority: 9,
+    tokens: [
+      {
+        type: "immune",
+        value: 1,
+      },
+    ],
+    slots: [
+      {
+        type: "shield",
+        max: 1,
+      },
+    ],
+    effects: [
+      {
+        token: "gold",
+        set: 2,
       },
     ],
   },

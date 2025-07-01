@@ -93,7 +93,7 @@ class PowerEffect extends Effect {
         }
         if (
           player.game.players.some(
-            (p) => p !== player && p.gifts.countCard() > 0
+            (p) => p !== player && p.gifts.countCards() > 0
           )
         ) {
           return player.game.evals.gift;

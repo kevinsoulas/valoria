@@ -67,7 +67,7 @@ p {
     gap: 6px;
     align-items: left;
     justify-content: start;
-    max-width: 400px;
+    max-width: 460px;
     p {
       margin-top: 14px;
     }
@@ -194,6 +194,8 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 3px;
+  padding: 6px;
   overflow: visible;
   box-shadow: -6px 0px 0px #96969677;
 
@@ -218,7 +220,6 @@ p {
     flex-direction: row;
     gap: 3px;
     justify-content: center;
-    padding: 3px 0px;
     border-radius: 3px;
     .slot {
       background-color: #eeeeee;
@@ -277,13 +278,7 @@ p {
     padding-top: 1px;
   }
 
-  &-header {
-    padding: 3px 6px;
-    color: black;
-  }
-
   &-content {
-    padding: 0px 6px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -291,7 +286,6 @@ p {
   }
 
   &-footer {
-    padding: 6px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -490,4 +484,56 @@ p {
   right: 3px;
   font-size: 8px;
   text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  #game {
+    padding: 0px;
+    padding: 3px;
+  }
+  #menu,
+  #setting,
+  #shortcuts,
+  #help,
+  #board,
+  #player,
+  #console,
+  #opponents {
+    gap: 3px;
+    padding: 3px;
+  }
+  .cards {
+    gap: 6px;
+  }
+  .card {
+    width: 115px;
+    height: auto;
+    aspect-ratio: 160/205;
+    &-description {
+      display: none;
+    }
+    &-name {
+      font-size: 13px;
+    }
+  }
+  .token {
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+    padding: 2px 0px;
+  }
+  .slot {
+    width: 26px;
+    height: 26px;
+  }
+  .token-shield,
+  .slot-shield {
+    width: 52px;
+  }
+  .token-mini-shield {
+    width: 32px;
+  }
+  .chapter {
+    display: none;
+  }
 }

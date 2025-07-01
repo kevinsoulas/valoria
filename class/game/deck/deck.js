@@ -136,7 +136,7 @@ class Deck {
    * Returns the number of cards in the deck
    * @returns {number} The number of cards in the deck
    */
-  countCard() {
+  countCards() {
     return this.cards.length;
   }
 

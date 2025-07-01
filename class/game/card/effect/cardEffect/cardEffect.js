@@ -66,7 +66,7 @@ class CardEffect extends Effect {
     let adding = 0;
     switch (this.f) {
       case "set":
-        adding = this.fValue - player.countCard(this.typeValue);
+        adding = this.fValue - player.countCards(this.typeValue);
         break;
       case "add":
         adding = this.fValue;
@@ -75,7 +75,7 @@ class CardEffect extends Effect {
         adding = player.countTokenAll(this.fValue);
         break;
     }
-    let adding_max = Math.min(adding, player.game.board.giftDeck.countCard());
+    let adding_max = Math.min(adding, player.game.board.giftDeck.countCards());
     return adding_max * player.game.evals[this.typeValue];
   }
 

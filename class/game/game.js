@@ -9,7 +9,7 @@ class Game {
     this.DEBUG = false;
     this.setting = {
       aiPlayers: 3,
-      extension: 2,
+      extension: 1,
     };
     this.scene = new Scene(this);
     this.logs = [];
@@ -44,7 +44,8 @@ class Game {
    * Creates a new game
    */
   newGame() {
-    this.turn = 0;
+    this.turn = -1;
+    this.chapter = null;
     this.table = new Table(this);
     this.board = new Board(this);
     this.player = new Player(this);
@@ -71,6 +72,7 @@ class Game {
       key: 0,
     };
     this.scene.setState("family");
+    this.turnPerChapter = Math.floor(this.board.postureDeck.countCards() / 9);
     this.render();
   }
 
@@ -137,6 +139,7 @@ class Game {
   nextTurn() {
     this.scene.setState("play");
     this.board.drawPostures();
+    this.updateTurn();
     this.updatePosturesScores();
     for (const player of this.players) {
       if (player !== this.player && player.alive) {
@@ -146,6 +149,14 @@ class Game {
       }
     }
     this.render();
+  }
+
+  /**
+   * Updates the chapter
+   */
+  updateTurn() {
+    this.turn++;
+    this.chapter = Math.floor(this.turn / this.turnPerChapter) + 1;
   }
 
   /**

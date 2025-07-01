@@ -28,11 +28,13 @@ class FamilyCard extends Card {
       </div>
       <div class="card-header">
         <div class="card-helper">
-          <p>${this.name}</p>${new Helper("card-family").render()}
+          <p class="card-name">${this.name}</p>${new Helper(
+        "card-family"
+      ).render()}
         </div>
       </div>
       <div class="card-content">
-        <small class="grey">${this.description}</small>
+        <small class="grey card-description">${this.description}</small>
         <div class="possible-effects">
           ${this.effects.map((effect) => effect.render()).join("")}  
         </div>
@@ -48,7 +50,7 @@ class FamilyCard extends Card {
           ${new Token("dead").renderMini()}
         </div>
         <div class="card-header">
-          <p>${this.name}</p>
+          <p class="card-name">${this.name}</p>
         </div>
       </div>
       `;
@@ -59,10 +61,10 @@ class FamilyCard extends Card {
         ${this.renderTokens()}
       </div>
       <div class="card-header">
-        <p>${this.name}</p>
+        <p class="card-name">${this.name}</p>
       </div>
       <div class="card-content">
-        <small class="grey">${this.description}</small>
+        <small class="grey card-description">${this.description}</small>
       </div>
       ${this.renderSlots()}
       ${this.renderActions()}

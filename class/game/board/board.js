@@ -84,13 +84,13 @@ class Board {
    */
   drawPostures() {
     this.postures = [];
-    if (this.postureDeck.countCard() > 0) {
+    if (this.postureDeck.countCards() > 0) {
       // Draw three cards
       for (let i = 0; i < 3; i++) {
         this.postures.push(this.postureDeck.draw(null, true));
       }
       // Draw one character card
-      if (this.characterDeck.countCard() > 0) {
+      if (this.characterDeck.countCards() > 0) {
         if (this.characters.length === 0) {
           this.characters.push(this.characterDeck.drawId("king"));
         } else {
@@ -143,12 +143,21 @@ class Board {
    */
   render() {
     return `
-      <p class="section">Game board</p>
+      ${this.renderTurn()}
       ${this.renderPostures()}
       ${this.renderCharacters()}
       ${this.renderCharacterDeck()}
       ${this.renderGiftDeck()}
     `;
+  }
+
+  renderTurn() {
+    if (this.game.turn < 0) {
+      return `<p class="section">Game board</p>`;
+    }
+    return `<p class="section">Chapter ${this.game.chapter}<br>Turn ${
+      (this.game.turn % this.game.turnPerChapter) + 1
+    } / ${this.game.turnPerChapter}</p>`;
   }
 
   /**
@@ -171,7 +180,7 @@ class Board {
    * @returns {string} HTML representation of the next turn button
    */
   renderPostureDeck() {
-    if (this.postureDeck.countCard() > 0) {
+    if (this.postureDeck.countCards() > 0) {
       return `
         <div class="card card-down">
           <div class="card-center">
@@ -298,7 +307,7 @@ class Board {
   renderCharacterDeck() {
     if (
       this.game.player.power == "meet" &&
-      this.characterDeck.countCard() > 0
+      this.characterDeck.countCards() > 0
     ) {
       return `
         <div id="character-deck">

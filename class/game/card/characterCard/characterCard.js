@@ -91,7 +91,7 @@ class CharacterCard extends Card {
           ${new Token("dead").renderMini()}
         </div>
         <div class="card-header">
-        <p>${this.name}</p>
+        <p class="card-name">${this.name}</p>
       </div>
       </div>
       `;
@@ -102,10 +102,10 @@ class CharacterCard extends Card {
         ${this.renderTokens()}
       </div>
       <div class="card-header">
-        <p>${this.name}</p>
+        <p class="card-name">${this.name}</p>
       </div>
       <div class="card-content">
-        <small class="grey">${this.description}</small>
+        <small class="grey card-description">${this.description}</small>
         <div class="card-cost-effects">
           ${this.renderCosts()}
           <div class="effects">

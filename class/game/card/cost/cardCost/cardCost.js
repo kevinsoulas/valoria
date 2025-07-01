@@ -26,7 +26,7 @@ class CardCost extends Cost {
       );
       return prophecyCards.length >= this.fValue;
     }
-    return player.countCard(this.typeValue) >= this.fValue;
+    return player.countCards(this.typeValue) >= this.fValue;
   }
 
   /**

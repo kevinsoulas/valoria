@@ -151,7 +151,7 @@ class Brain {
    * Checks if the player should use gifts
    */
   mayUseGifts() {
-    if (this.player.gifts.countCard() > 0) {
+    if (this.player.gifts.countCards() > 0) {
       for (const giftCard of this.player.gifts.cards) {
         if (this.scoreEffectList(giftCard.effects) > 1) {
           this.game.log(
@@ -394,7 +394,7 @@ class Brain {
           let targetPlayer = null;
           for (const player of this.player.game.players) {
             if (player !== this.player) {
-              const giftCount = player.gifts.countCard();
+              const giftCount = player.gifts.countCards();
               if (giftCount > maxGifts) {
                 maxGifts = giftCount;
                 targetPlayer = player;

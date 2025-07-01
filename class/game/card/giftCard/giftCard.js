@@ -23,10 +23,10 @@ class GiftCard extends Card {
           ${this.renderTokens()}
         </div>
         <div class="card-header">
-          <p>${this.name}</p>
+          <p class="card-name">${this.name}</p>
         </div>
         <div class="card-content">
-          <small class="grey">${this.description}</small>
+          <small class="grey card-description">${this.description}</small>
           <div class="possible-effects">
             <div class="effects">
               ${
@@ -60,7 +60,7 @@ class GiftCard extends Card {
       this.player &&
       this.game.player.power === "vision" &&
       this.player !== this.player.game.player &&
-      this.player.gifts.cards[this.player.gifts.countCard() - 1] === this &&
+      this.player.gifts.cards[this.player.gifts.countCards() - 1] === this &&
       this.player.hand.visible === false
     ) {
       this.actions.push(
@@ -79,7 +79,8 @@ class GiftCard extends Card {
       if (
         this.player &&
         this.game.player.power === "steal" &&
-        ((this.player.gifts.cards[this.player.gifts.countCard() - 1] === this &&
+        ((this.player.gifts.cards[this.player.gifts.countCards() - 1] ===
+          this &&
           this.player.hand.visible === false) ||
           this.player.hand.visible === true)
       ) {

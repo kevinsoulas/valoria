@@ -39,7 +39,7 @@ const characterCards = [
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "character",
     color: "purple",
     id: "princess",
@@ -283,7 +283,7 @@ const characterCards = [
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "character",
     color: "purple",
     id: "justiciar",
@@ -309,12 +309,12 @@ const characterCards = [
     costs: [
       {
         token: "gold",
-        value: 3,
+        value: 4,
       },
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "character",
     color: "purple",
     id: "thief",
@@ -340,7 +340,7 @@ const characterCards = [
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "character",
     color: "purple",
     id: "oracle",
@@ -365,7 +365,7 @@ const characterCards = [
     ],
   },
   {
-    extension: 1,
+    extension: 0,
     type: "character",
     color: "purple",
     id: "merchant",
@@ -392,7 +392,7 @@ const characterCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 0,
     type: "character",
     color: "purple",
     id: "collector",
@@ -418,7 +418,7 @@ const characterCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 0,
     type: "character",
     color: "purple",
     id: "blacksmith",
@@ -445,7 +445,7 @@ const characterCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 1,
     type: "character",
     color: "purple",
     id: "devil",
@@ -477,7 +477,7 @@ const characterCards = [
     ],
   },
   {
-    extension: 2,
+    extension: 1,
     type: "character",
     color: "purple",
     id: "prisoner",
@@ -499,6 +499,32 @@ const characterCards = [
       {
         card: "key",
         value: 1,
+      },
+    ],
+  },
+  {
+    extension: 1,
+    type: "character",
+    color: "purple",
+    id: "serpent",
+    name: "Serpent",
+    description: "A cunning and deadly creature that thrives on corruption",
+    tokens: [
+      {
+        type: "immune",
+        value: 1,
+      },
+    ],
+    effects: [
+      {
+        token: "immune",
+        add: 1,
+      },
+    ],
+    costs: [
+      {
+        token: "crime",
+        value: 2,
       },
     ],
   },

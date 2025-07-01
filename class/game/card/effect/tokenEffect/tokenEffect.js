@@ -103,6 +103,8 @@ class TokenEffect extends Effect {
             return `${token} : 🍀`;
           case "crime":
             return `${token} : ☠️`;
+          case "immune":
+            return `${token} : 💛`;
         }
     }
   }
@@ -127,6 +129,8 @@ class TokenEffect extends Effect {
         return `🍀`;
       case "crime":
         return `☠️`;
+      case "immune":
+        return `💛`;
     }
   }
 

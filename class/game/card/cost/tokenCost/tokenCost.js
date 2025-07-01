@@ -55,6 +55,8 @@ class TokenCost extends Cost {
         return `🛡️`;
       case "life":
         return `❤️`;
+      case "crime":
+        return `☠️`;
     }
   }
 

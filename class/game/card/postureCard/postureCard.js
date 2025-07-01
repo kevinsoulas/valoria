@@ -64,10 +64,10 @@ class PostureCard extends Card {
       <div class="card card-down card-posture">
         <div class="card-header">
           ${this.game.DEBUG ? this.renderScore() : this.renderChapters()}
-          <p>${this.name}</p>
+          <p class="card-name">${this.name}</p>
         </div>
         <div class="card-content">
-          <small class="grey">${this.description}</small>
+          <small class="grey card-description">${this.description}</small>
           ${this.renderPossibleEffects()}
         </div>
         ${this.game.scene.state === "play" ? this.renderActions() : ""}
@@ -97,8 +97,9 @@ class PostureCard extends Card {
    * @returns {string} HTML representation of the chapter
    */
   renderChapter(chapter) {
+    let active = this.game.chapter === chapter;
     return `
-      <div class="chapter">
+      <div class="chapter ${active ? "active" : ""}">
         ${chapter}
       </div>
     `;
