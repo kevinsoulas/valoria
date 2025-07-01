@@ -536,4 +536,12 @@ p {
   .chapter {
     display: none;
   }
+  #table {
+    flex-direction: column;
+  }
+  .shortcuts-buttons {
+    button {
+      flex: 1;
+    }
+  }
 }
